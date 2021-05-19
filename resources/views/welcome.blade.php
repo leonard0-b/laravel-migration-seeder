@@ -5,70 +5,70 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/app.css">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
-        <div>
+        <main class="flex">
+            <div class="w-60">
+                <img src="https://media.architecturaldigest.com/photos/58238acb355a259d55d5185d/master/pass/surreal-landscapes-us-01.jpg" alt="">
+                <div class="overlay"></div>
+                <div class="title">
+                    <h2>Hei,</h2>
+                    <h1>where you off to next?</h1>
+                </div>
+                <div class="label">
+                    <h2>Booltrip</h2>
+                </div>
+            </div>
+            <div class="w-40 flex">
+                <div class="title-right">
+                    <h2>What are you looking for?</h2>
+                </div>
+                <div class="icons flex">
+                    <div class="icon">
+                        <img src="./img/hotel.svg" alt="">
+                        <p>Hotels</p>
+                    </div>
+                    <div class="icon active">
+                        <img src="./img/flight.svg" alt="">
+                        <p>Flights</p>
+                    </div>
+                    <div class="icon">
+                        <img src="./img/trips.svg" alt="">
+                        <p>Trips</p>
+                    </div>
+                    <div class="icon">
+                        <img src="./img/car.svg" alt="">
+                        <p>Car Rental</p>
+                    </div>
+                </div>
+                @foreach ($travels as $travel)
+                <div class="packs flex">
+                    <div class="col33">
+                        <p>{{$travel->destination_state}}</p>
+                    </div>
+                    <div class="col33">
+                        <p>{{$travel->destination_city}}</p>
+                    </div>
+                    <div class="col33">
+                        <p>{{$travel->price}}$</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </main>
+    </body>
+</html>
+
+<!--         <div>
             @foreach ($travels as $travel)
                 {{$travel->destination_state}}
                 {{$travel->destination_city}}
             @endforeach
         </div>
-    </body>
-</html>
+ -->
