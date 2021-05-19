@@ -20,7 +20,7 @@ class CreateTravelsTable extends Migration
             $table->date('date');
             $table->tinyInteger('n_people');
             $table->smallInteger('price');
-            $table->tinyInteger('duration_days');
+            $table->smallInteger('duration_days');
             $table->timestamps();
         });
     }
