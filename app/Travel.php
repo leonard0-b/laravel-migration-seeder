@@ -12,4 +12,5 @@ class Travel extends Model
      * @var string
     */
     protected $table = "travels";
+    
 }
